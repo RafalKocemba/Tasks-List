@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #eee;
+    font-family: 'Caveat', cursive;
+}
+
+.wrapper {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #B5B7BB;
+    width: 600px;
+    height: 90vh;
+    max-height: 900px;
+    background-color: white;
+
+}
+
+.wrapper::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(image1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.07;
+    z-index: -1;
+
+}
+
+main {
+    flex-basis: 60%;
+    margin: 30px 0 30px 30px;
+
+}
+
+aside {
+    flex-basis: 40%;
+    margin: 30px 30px 30px 0;
+    border-left: 2px solid black;
+}
+
+
+.addTask {
+    position: relative;
+    height: 10%;
+    border-bottom: 2px solid black;
+}
+
+
+.tasks {
+    height: 45%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+main h1 {
+    height: 50px;
+}
+
+.done {
+    height: 35%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.done li {
+    color: gray;
+}
+
+
+.search {
+    position: relative;
+    border-bottom: 2px solid black;
+    height: 10%;
+}
+
+
+.addTask form {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 2px 0 10px;
+    width: 100%;
+    height: 60px;
+
+}
+
+.addTask input {
+    border-bottom: 1px dotted #333;
+    width: 50%;
+    font-family: arial, sans-serif;
+    padding: 5px;
+}
+
+.addTask input:focus {
+    outline: none;
+}
+
+
+button.add {
+    background-color: transparent;
+    font-size: 46px;
+    font-family: 'Caveat', cursive;
+    cursor: pointer;
+    transition: .2s;
+}
+
+button.add:focus {
+    outline: none;
+}
+
+button.add:hover {
+    color: green;
+}
+
+@keyframes animationButton {
+    0% {
+        transform: rotate(0);
+        transform-origin: 60% 60%;
+    }
+
+    3% {
+        transform: rotate(0);
+        color: black;
+    }
+
+    50% {
+        color: darkgreen;
+    }
+
+    70% {
+        transform: rotate(270deg);
+        color: darkred;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        color: black;
+    }
+}
+
+.active {
+    animation: 1.5s animationButton both;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.addTask span {
+    padding-right: 7px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+main h1 {
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+main h1::after {
+    display: block;
+    content: '';
+    margin-left: -20px;
+    width: 150px;
+    height: 1px;
+    background-color: black;
+}
+
+main h1.move::after {
+    display: block;
+    content: '';
+    margin-left: -20px;
+    width: 150px;
+    height: 1px;
+    background-color: black;
+    animation: 2s moveLine both;
+}
+
+@keyframes moveLine {
+    40% {
+        width: 250px;
+        margin-left: -50px;
+    }
+
+}
+
+
+.search input {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    bottom: 5px;
+    border: 1px solid black;
+    width: 90%;
+    padding: 3px 6px;
+    border-radius: 7px;
+    font-family: arial, sans-serif;
+}
+
+body input {
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.searchList {
+    padding: 10px 5px 0;
+    height: 90%;
+    text-align: center;
+    overflow: scroll;
+}
+
+ul {
+    padding: 10px 10px 10px 0;
+    list-style-type: none;
+}
+
+li {
+    line-height: 30px;
+    word-break: break-all;
+    font-size: 0;
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+li:hover span {
+    margin-left: 5px;
+}
+
+span.delete,
+span.accept {
+    display: inline-block;
+    width: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+
+span.accept:hover,
+span.delete:hover {
+    transform: scale(1.5);
+}
+
+span.delete {
+    margin-left: -15px;
+    color: red;
+
+}
+
+span.accept {
+    margin-left: -15px;
+    color: green;
+
+}
+
+li.doneSearch {
+    color: #888;
+}
+
+.searchList li {
+    cursor: default;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
