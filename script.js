@@ -6,10 +6,10 @@ const ulDone = document.querySelector('.done ul')
 const inputSearch = document.querySelector('.search input')
 const ulSearchList = document.querySelector('.searchList ul')
 const h1Done = document.querySelector('main h1')
+const tasksList = [];
+const doneList = [];
+const searchList = [];
 let btnDelete;
-let tasksList = [];
-let doneList = [];
-let searchList = [];
 
 const refreshList = (ul, list) => {
     ul.textContent = '';
@@ -74,7 +74,7 @@ const deleteTask = (e) => {
 }
 
 const searchTask = (e) => {
-    searchList = []
+    searchList.length = 0;
     ulSearchList.textContent = ''
     let inputValue = e.target.value.toLowerCase()
     if (inputValue == '') return
