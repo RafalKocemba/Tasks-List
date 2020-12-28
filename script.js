@@ -78,14 +78,14 @@ const searchTask = (e) => {
     ulSearchList.textContent = ''
     let inputValue = e.target.value.toLowerCase()
     if (inputValue == '') return
-    const includeValue = tasksList.filter(li => li.textContent.toLowerCase().includes(inputValue))
+    const includeValue = tasksList?.filter(li => li.textContent.toLowerCase().includes(inputValue))
     includeValue.forEach(li => {
         const text = li.textContent.slice(2)
         const listElement = document.createElement('li')
         listElement.textContent = text
         searchList.push(listElement)
     })
-    const includeContent = doneList.filter(li => li.textContent.toLowerCase().includes(inputValue))
+    const includeContent = doneList?.filter(li => li.textContent.toLowerCase().includes(inputValue))
     includeContent.forEach(li => {
         const text = li.textContent.slice(1)
         const listEl = document.createElement('li')
